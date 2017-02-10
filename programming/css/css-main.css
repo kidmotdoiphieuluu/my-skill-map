@@ -1,0 +1,78 @@
+/*
+ * CSS of css-main.html
+ */
+
+
+html, body {
+	height: 100%;
+}
+body {
+	font-family: 'Tahoma', san-serif;
+	font-size: 1em;
+	margin: 0;
+}
+header {
+	height: 10%;
+}
+
+a {
+	text-decoration: none;
+	color: initial;
+}
+
+#main-nav {
+	display: flex;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	background-color: orange;
+}
+#main-nav > li > span, #main-nav > li > a {
+	display: block;
+	cursor: pointer;
+	padding: 20px;
+	color: white;
+}
+#main-nav > li:hover {
+	box-shadow: inset 0 0 0 1px white;
+}
+#back-to-map {
+	color: blue !important;
+	background-color: white;
+	box-shadow: inset 0 0 0 1px blue;
+}
+#back-to-map:hover {
+	color: white !important;
+	background-color: blue;
+	box-shadow: inset 0 0 0 1px white;
+}
+
+.subnav {
+	display: none;
+	position: absolute;
+	padding: 20px 50px;
+	width: 100%;
+	left: 0px;
+	background-color: white;
+	box-shadow: 0 0 1px 1px orange;
+	box-sizing: border-box;
+}
+li:hover > .subnav {
+	display: block;
+}
+.subnav > a {
+	padding: 5px;
+	display: block;
+	color: black;
+}
+.subnav > a:hover {
+	color: orange;
+}
+
+iframe {
+	display: block;
+	border: 0;
+	width: 100%;
+	height: 90%;
+}

@@ -1,0 +1,163 @@
+/*
+ * CSS of flexbox.html
+ */
+
+/* Variable definition */
+:root {
+	
+}
+
+body {
+	padding: 0;
+	font-family: 'Tahoma', san-serif;
+	font-size: 1em;
+}
+body, ul, ol {
+	margin: 0;
+}
+ul {
+	padding-left: 20px;
+}
+li {
+	padding: 0.1em 0;
+}
+a {
+	text-decoration: none;
+	color: initial;
+}
+iframe {
+	border: 0;
+}
+
+header > h1 {
+	text-align: center;
+}
+#table-content {
+	padding: 20px 50px 30px 50px;
+	display: inline-block;
+	position: fixed;
+	transform: translate(0, -50px);
+	left: 0px;
+	width: 250px;
+	box-shadow: 0 0 0 1px black;
+	background-color: rgba(173, 216, 230, 0.9);
+	
+	animation: table-content-ani 0.7s linear 0.75s forwards;
+	-webkit-animation: table-content-ani 0.7s linear 0.75s forwards;
+	-moz-animation: table-content-ani 0.7s linear 0.75s forwards;
+	-ms-animation: table-content-ani 0.7s linear 0.75s forwards;
+	-o-animation: table-content-ani 0.7s linear 0.75s forwards;
+}
+#table-content:hover {
+	animation: none;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-ms-animation: none;
+	-o-animation: none;
+}
+
+#table-content .title {
+	margin-bottom: 0.2em;
+	font-weight: bold;
+}
+
+@keyframes table-content-ani {
+	0% {
+		left: 0px;
+	}
+	100% {
+		left: -345px;
+	}
+}
+@-webkit-keyframes table-content-ani {
+	0% {
+		left: 0px;
+	}
+	100% {
+		left: -345px;
+	}
+}
+@-moz-keyframes table-content-ani {
+	0% {
+		left: 0px;
+	}
+	100% {
+		left: -345px;
+	}
+}
+@-ms-keyframes table-content-ani {
+	0% {
+		left: 0px;
+	}
+	100% {
+		left: -345px;
+	}
+}
+@-o-keyframes table-content-ani {
+	0% {
+		left: 0px;
+	}
+	100% {
+		left: -345px;
+	}
+}
+
+#flex-article {
+	padding: 0 5%;
+}
+
+div[id^="attr-"] {
+	margin: 10px 0;
+}
+div[id^="attr-"] > *:first-child {
+	display: inline-block;
+	color: red;
+	margin: 0 5px 5px 0;
+}
+div[id^="attr-"] > *:first-child::after {
+	content: ":";
+}
+
+div[id^="attr-"] div[id^="attr-"] {
+	margin-left: 20px;
+}
+div[id^="attr-"] span {
+	line-height: 1.5;
+}
+div[id^="attr-"] > p {
+	margin: 0;
+	line-height: 1.5;
+}
+div[id^="attr-"] > ul {
+	padding-left: 40px;
+}
+div[id^="attr-"] > ul > li {
+	margin: 2px 0;
+}
+div[id^="attr-"] > ul > li > span:first-of-type::after {
+	content: ":";
+}
+
+.attr-name {
+	color: red;
+}
+.attr-value {
+	padding: 2px;
+	border-radius: 5px;
+	background-color: lightgrey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

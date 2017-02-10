@@ -1,0 +1,868 @@
+/*
+ * CSS of Tran Duc Anh's skill map
+ */
+
+/* Variable definition */
+:root {
+	--cell-size: 64px;
+	--font-size: 80%;
+	
+	--num-cell-app: 5;
+	--num-cell-web-client: 8;
+	--num-cell-web-server: 5;
+	
+	--border-move-length: 17px;
+}
+
+body {
+	min-width: 1349px;
+	padding: 0;
+	margin: 0;
+	background-image: url('../img/skill-map-bg.png');
+	background-size: contain;
+	background-repeat: repeat;
+	background-attachment: scroll;
+	color: #609FA9;
+	font-family: 'Tahoma';
+	font-size: var(--font-size);
+}
+
+#skill-map-container {
+	width: 100%;
+	min-width: 1349px;
+	min-height: 2117px;
+	background-color: rgba(3, 16, 19, 0.75);
+}
+
+.row::before {
+	content: " ";
+	display: table;
+}
+.row::after {
+	clear: both;
+	content: " ";
+	display: table;
+}
+* [class^=col] {
+	float: left;
+}
+
+#programming, #security {
+	text-align: center;
+	padding: 35px 0;
+}
+
+#app {
+	width: calc(var(--cell-size) * var(--num-cell-app));
+	padding: calc(var(--cell-size) / 2);
+}
+#web-client {
+	width: calc(var(--cell-size) * var(--num-cell-web-client));
+	padding: calc(var(--cell-size) / 2);
+	border-left: 1px solid orange;
+	border-right: 1px solid orange;
+}
+#web-server {
+	width: calc(var(--cell-size) * var(--num-cell-web-server));
+	padding: calc(var(--cell-size) / 2);
+}
+
+h3 {
+	margin-top: 0;
+	margin-bottom: calc(var(--cell-size) / 2);
+}
+
+.cell {
+	width: var(--cell-size);
+	height: var(--cell-size);
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+.cell > div {
+	width: 100%;
+	height: 100%;
+}
+.cell > div > div {
+	display: flex;
+	float: left;
+	width: 50%;
+	height: 50%;
+}
+.bd-top {
+	border-top: 1px solid #609FA9;
+	margin-top: -1px;
+}
+.bd-bottom {
+	border-bottom: 1px solid green;
+	margin-bottom: -1px;
+}
+.bd-left {
+	border-left: 1px solid #609FA9;
+	margin-left: -1px;
+}
+.bd-right {
+	border-right: 1px solid green;
+	margin-right: -1px;
+}
+
+.achieved {
+	box-shadow: inset 0 0 0 1px #609FA9;
+	background-color: initial;
+	position: relative;
+}
+.achieved::before {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	font-size: 90%;
+    content: " ";
+	white-space: pre;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	box-shadow: inset 0 0 0 1px #609FA9;
+    background-color: initial;
+	
+	animation: achieved-glass 5s infinite;
+	-webkit-animation: achieved-glass 10s infinite;
+	-moz-animation: achieved-glass 10s infinite;
+	-ms-animation: achieved-glass 10s infinite;
+	-o-animation: achieved-glass 10s infinite;
+}
+.achieved:hover::before {
+	background-color: white!important;
+}
+@keyframes achieved-glass {
+	0% {
+		background-image: none;
+	}
+	1% {
+		background-image: linear-gradient(-45deg, transparent 75%, var(--glass-color) 75%, var(--glass-color));
+	}
+	2% {
+		background-image: linear-gradient(-45deg, transparent 50%, var(--glass-color) 50%, var(--glass-color) 75%, transparent 75%, transparent);
+	}
+	3% {
+		background-image: linear-gradient(-45deg, transparent 25%, var(--glass-color) 25%, var(--glass-color) 50%, transparent 50%, transparent 75%, var(--glass-color) 75%, var(--glass-color));
+	}
+	4% {
+		background-image: linear-gradient(-45deg, var(--glass-color) 25%, transparent 25%, transparent 50%, var(--glass-color) 50%, var(--glass-color) 75%, transparent 75%, transparent);
+	}
+	5% {
+		background-image: linear-gradient(-45deg, transparent 25%, var(--glass-color) 25%, var(--glass-color) 50%, transparent 50%, transparent 75%);
+	}
+	6% {
+		background-image: linear-gradient(-45deg, var(--glass-color) 25%, transparent 25%);
+	}
+	7% {
+		background-image: none;
+	}
+	100% {
+		background-image: none;
+	}
+}
+@-webkit-keyframes achieved-glass {
+	0% {
+		background-image: none;
+	}
+	1% {
+		background-image: linear-gradient(-45deg, transparent 75%, var(--glass-color) 75%, var(--glass-color));
+	}
+	2% {
+		background-image: linear-gradient(-45deg, transparent 50%, var(--glass-color) 50%, var(--glass-color) 75%, transparent 75%, transparent);
+	}
+	3% {
+		background-image: linear-gradient(-45deg, transparent 25%, var(--glass-color) 25%, var(--glass-color) 50%, transparent 50%, transparent 75%, var(--glass-color) 75%, var(--glass-color));
+	}
+	4% {
+		background-image: linear-gradient(-45deg, var(--glass-color) 25%, transparent 25%, transparent 50%, var(--glass-color) 50%, var(--glass-color) 75%, transparent 75%, transparent);
+	}
+	5% {
+		background-image: linear-gradient(-45deg, transparent 25%, var(--glass-color) 25%, var(--glass-color) 50%, transparent 50%, transparent 75%);
+	}
+	6% {
+		background-image: linear-gradient(-45deg, var(--glass-color) 25%, transparent 25%);
+	}
+	7% {
+		background-image: none;
+	}
+	100% {
+		background-image: none;
+	}
+}
+@-moz-keyframes achieved-glass {
+	0% {
+		background-image: none;
+	}
+	1% {
+		background-image: linear-gradient(-45deg, transparent 75%, var(--glass-color) 75%, var(--glass-color));
+	}
+	2% {
+		background-image: linear-gradient(-45deg, transparent 50%, var(--glass-color) 50%, var(--glass-color) 75%, transparent 75%, transparent);
+	}
+	3% {
+		background-image: linear-gradient(-45deg, transparent 25%, var(--glass-color) 25%, var(--glass-color) 50%, transparent 50%, transparent 75%, var(--glass-color) 75%, var(--glass-color));
+	}
+	4% {
+		background-image: linear-gradient(-45deg, var(--glass-color) 25%, transparent 25%, transparent 50%, var(--glass-color) 50%, var(--glass-color) 75%, transparent 75%, transparent);
+	}
+	5% {
+		background-image: linear-gradient(-45deg, transparent 25%, var(--glass-color) 25%, var(--glass-color) 50%, transparent 50%, transparent 75%);
+	}
+	6% {
+		background-image: linear-gradient(-45deg, var(--glass-color) 25%, transparent 25%);
+	}
+	7% {
+		background-image: none;
+	}
+	100% {
+		background-image: none;
+	}
+}
+@-ms-keyframes achieved-glass {
+	0% {
+		background-image: none;
+	}
+	1% {
+		background-image: linear-gradient(-45deg, transparent 75%, var(--glass-color) 75%, var(--glass-color));
+	}
+	2% {
+		background-image: linear-gradient(-45deg, transparent 50%, var(--glass-color) 50%, var(--glass-color) 75%, transparent 75%, transparent);
+	}
+	3% {
+		background-image: linear-gradient(-45deg, transparent 25%, var(--glass-color) 25%, var(--glass-color) 50%, transparent 50%, transparent 75%, var(--glass-color) 75%, var(--glass-color));
+	}
+	4% {
+		background-image: linear-gradient(-45deg, var(--glass-color) 25%, transparent 25%, transparent 50%, var(--glass-color) 50%, var(--glass-color) 75%, transparent 75%, transparent);
+	}
+	5% {
+		background-image: linear-gradient(-45deg, transparent 25%, var(--glass-color) 25%, var(--glass-color) 50%, transparent 50%, transparent 75%);
+	}
+	6% {
+		background-image: linear-gradient(-45deg, var(--glass-color) 25%, transparent 25%);
+	}
+	7% {
+		background-image: none;
+	}
+	100% {
+		background-image: none;
+	}
+}
+@-o-keyframes achieved-glass {
+	0% {
+		background-image: none;
+	}
+	1% {
+		background-image: linear-gradient(-45deg, transparent 75%, var(--glass-color) 75%, var(--glass-color));
+	}
+	2% {
+		background-image: linear-gradient(-45deg, transparent 50%, var(--glass-color) 50%, var(--glass-color) 75%, transparent 75%, transparent);
+	}
+	3% {
+		background-image: linear-gradient(-45deg, transparent 25%, var(--glass-color) 25%, var(--glass-color) 50%, transparent 50%, transparent 75%, var(--glass-color) 75%, var(--glass-color));
+	}
+	4% {
+		background-image: linear-gradient(-45deg, var(--glass-color) 25%, transparent 25%, transparent 50%, var(--glass-color) 50%, var(--glass-color) 75%, transparent 75%, transparent);
+	}
+	5% {
+		background-image: linear-gradient(-45deg, transparent 25%, var(--glass-color) 25%, var(--glass-color) 50%, transparent 50%, transparent 75%);
+	}
+	6% {
+		background-image: linear-gradient(-45deg, var(--glass-color) 25%, transparent 25%);
+	}
+	7% {
+		background-image: none;
+	}
+	100% {
+		background-image: none;
+	}
+}
+.achieved::after {
+	position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+	/* animation: achieved-border-move 4s linear infinite; */
+	/* -webkit-animation: achieved-border-move 4s linear infinite; */
+	/* -moz-animation: achieved-border-move 4s linear infinite; */
+	/* -ms-animation: achieved-border-move 4s linear infinite; */
+	/* -o-animation: achieved-border-move 4s linear infinite; */
+}
+@keyframes achieved-border-move {
+	0% {
+		top: 0px;
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset 0 1px 0 0px var(--border-move-color);
+	}
+	20% {
+		top: 0px;
+		left: calc(var(--cell-size) - var(--border-move-length));
+		width: var(--border-move-length);
+		height: 1px;
+	}
+	20.5% {
+		box-shadow: inset -1px 1px 0 0px var(--border-move-color);
+	}
+	25% {
+		top: 0px;
+		left: calc(var(--cell-size) - 1px);
+		width: 1px;
+		height: var(--border-move-length);
+		box-shadow: inset -1px 1px 0 0px var(--border-move-color);
+	}
+	45% {
+		top: calc(var(--cell-size) - var(--border-move-length));
+		left: calc(var(--cell-size) - 1px);
+		width: 1px;
+		height: var(--border-move-length);
+	}
+	45.5% {
+		box-shadow: inset -1px -1px 0 0px var(--border-move-color);
+	}
+	50% {
+		top: calc(var(--cell-size) - 1px);
+		left: calc(var(--cell-size) - var(--border-move-length));
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset -1px -1px 0 0px var(--border-move-color);
+	}
+	70% {
+		top: calc(var(--cell-size) - 1px);
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+	}
+	70.5% {
+		box-shadow: inset 1px -1px 0 0px var(--border-move-color);
+	}
+	75% {
+		top: calc(var(--cell-size) - var(--border-move-length));
+		left: 0px;
+		width: 1px;
+		height: var(--border-move-length);
+		box-shadow: inset 1px -1px 0 0px var(--border-move-color);
+	}
+	95% {
+		top: 0px;
+		left: 0px;
+		width: 1px;
+		height: var(--border-move-length);
+	}
+	95.5% {
+		box-shadow: inset 1px 1px 0 0px var(--border-move-color);
+	}
+	100% {
+		top: 0px;
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset 1px 1px 0 0px var(--border-move-color);
+	}
+}
+@-webkit-keyframes achieved-border-move {
+	0% {
+		top: 0px;
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset 0 1px 0 0px var(--border-move-color);
+	}
+	20% {
+		top: 0px;
+		left: calc(var(--cell-size) - var(--border-move-length));
+		width: var(--border-move-length);
+		height: 1px;
+	}
+	20.5% {
+		box-shadow: inset -1px 1px 0 0px var(--border-move-color);
+	}
+	25% {
+		top: 0px;
+		left: calc(var(--cell-size) - 1px);
+		width: 1px;
+		height: var(--border-move-length);
+		box-shadow: inset -1px 1px 0 0px var(--border-move-color);
+	}
+	45% {
+		top: calc(var(--cell-size) - var(--border-move-length));
+		left: calc(var(--cell-size) - 1px);
+		width: 1px;
+		height: var(--border-move-length);
+	}
+	45.5% {
+		box-shadow: inset -1px -1px 0 0px var(--border-move-color);
+	}
+	50% {
+		top: calc(var(--cell-size) - 1px);
+		left: calc(var(--cell-size) - var(--border-move-length));
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset -1px -1px 0 0px var(--border-move-color);
+	}
+	70% {
+		top: calc(var(--cell-size) - 1px);
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+	}
+	70.5% {
+		box-shadow: inset 1px -1px 0 0px var(--border-move-color);
+	}
+	75% {
+		top: calc(var(--cell-size) - var(--border-move-length));
+		left: 0px;
+		width: 1px;
+		height: var(--border-move-length);
+		box-shadow: inset 1px -1px 0 0px var(--border-move-color);
+	}
+	95% {
+		top: 0px;
+		left: 0px;
+		width: 1px;
+		height: var(--border-move-length);
+	}
+	95.5% {
+		box-shadow: inset 1px 1px 0 0px var(--border-move-color);
+	}
+	100% {
+		top: 0px;
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset 1px 1px 0 0px var(--border-move-color);
+	}
+}
+@-moz-keyframes achieved-border-move {
+	0% {
+		top: 0px;
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset 0 1px 0 0px var(--border-move-color);
+	}
+	20% {
+		top: 0px;
+		left: calc(var(--cell-size) - var(--border-move-length));
+		width: var(--border-move-length);
+		height: 1px;
+	}
+	20.5% {
+		box-shadow: inset -1px 1px 0 0px var(--border-move-color);
+	}
+	25% {
+		top: 0px;
+		left: calc(var(--cell-size) - 1px);
+		width: 1px;
+		height: var(--border-move-length);
+		box-shadow: inset -1px 1px 0 0px var(--border-move-color);
+	}
+	45% {
+		top: calc(var(--cell-size) - var(--border-move-length));
+		left: calc(var(--cell-size) - 1px);
+		width: 1px;
+		height: var(--border-move-length);
+	}
+	45.5% {
+		box-shadow: inset -1px -1px 0 0px var(--border-move-color);
+	}
+	50% {
+		top: calc(var(--cell-size) - 1px);
+		left: calc(var(--cell-size) - var(--border-move-length));
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset -1px -1px 0 0px var(--border-move-color);
+	}
+	70% {
+		top: calc(var(--cell-size) - 1px);
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+	}
+	70.5% {
+		box-shadow: inset 1px -1px 0 0px var(--border-move-color);
+	}
+	75% {
+		top: calc(var(--cell-size) - var(--border-move-length));
+		left: 0px;
+		width: 1px;
+		height: var(--border-move-length);
+		box-shadow: inset 1px -1px 0 0px var(--border-move-color);
+	}
+	95% {
+		top: 0px;
+		left: 0px;
+		width: 1px;
+		height: var(--border-move-length);
+	}
+	95.5% {
+		box-shadow: inset 1px 1px 0 0px var(--border-move-color);
+	}
+	100% {
+		top: 0px;
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset 1px 1px 0 0px var(--border-move-color);
+	}
+}
+@-ms-keyframes achieved-border-move {
+	0% {
+		top: 0px;
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset 0 1px 0 0px var(--border-move-color);
+	}
+	20% {
+		top: 0px;
+		left: calc(var(--cell-size) - var(--border-move-length));
+		width: var(--border-move-length);
+		height: 1px;
+	}
+	20.5% {
+		box-shadow: inset -1px 1px 0 0px var(--border-move-color);
+	}
+	25% {
+		top: 0px;
+		left: calc(var(--cell-size) - 1px);
+		width: 1px;
+		height: var(--border-move-length);
+		box-shadow: inset -1px 1px 0 0px var(--border-move-color);
+	}
+	45% {
+		top: calc(var(--cell-size) - var(--border-move-length));
+		left: calc(var(--cell-size) - 1px);
+		width: 1px;
+		height: var(--border-move-length);
+	}
+	45.5% {
+		box-shadow: inset -1px -1px 0 0px var(--border-move-color);
+	}
+	50% {
+		top: calc(var(--cell-size) - 1px);
+		left: calc(var(--cell-size) - var(--border-move-length));
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset -1px -1px 0 0px var(--border-move-color);
+	}
+	70% {
+		top: calc(var(--cell-size) - 1px);
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+	}
+	70.5% {
+		box-shadow: inset 1px -1px 0 0px var(--border-move-color);
+	}
+	75% {
+		top: calc(var(--cell-size) - var(--border-move-length));
+		left: 0px;
+		width: 1px;
+		height: var(--border-move-length);
+		box-shadow: inset 1px -1px 0 0px var(--border-move-color);
+	}
+	95% {
+		top: 0px;
+		left: 0px;
+		width: 1px;
+		height: var(--border-move-length);
+	}
+	95.5% {
+		box-shadow: inset 1px 1px 0 0px var(--border-move-color);
+	}
+	100% {
+		top: 0px;
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset 1px 1px 0 0px var(--border-move-color);
+	}
+}
+@-o-keyframes achieved-border-move {
+	0% {
+		top: 0px;
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset 0 1px 0 0px var(--border-move-color);
+	}
+	20% {
+		top: 0px;
+		left: calc(var(--cell-size) - var(--border-move-length));
+		width: var(--border-move-length);
+		height: 1px;
+	}
+	20.5% {
+		box-shadow: inset -1px 1px 0 0px var(--border-move-color);
+	}
+	25% {
+		top: 0px;
+		left: calc(var(--cell-size) - 1px);
+		width: 1px;
+		height: var(--border-move-length);
+		box-shadow: inset -1px 1px 0 0px var(--border-move-color);
+	}
+	45% {
+		top: calc(var(--cell-size) - var(--border-move-length));
+		left: calc(var(--cell-size) - 1px);
+		width: 1px;
+		height: var(--border-move-length);
+	}
+	45.5% {
+		box-shadow: inset -1px -1px 0 0px var(--border-move-color);
+	}
+	50% {
+		top: calc(var(--cell-size) - 1px);
+		left: calc(var(--cell-size) - var(--border-move-length));
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset -1px -1px 0 0px var(--border-move-color);
+	}
+	70% {
+		top: calc(var(--cell-size) - 1px);
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+	}
+	70.5% {
+		box-shadow: inset 1px -1px 0 0px var(--border-move-color);
+	}
+	75% {
+		top: calc(var(--cell-size) - var(--border-move-length));
+		left: 0px;
+		width: 1px;
+		height: var(--border-move-length);
+		box-shadow: inset 1px -1px 0 0px var(--border-move-color);
+	}
+	95% {
+		top: 0px;
+		left: 0px;
+		width: 1px;
+		height: var(--border-move-length);
+	}
+	95.5% {
+		box-shadow: inset 1px 1px 0 0px var(--border-move-color);
+	}
+	100% {
+		top: 0px;
+		left: 0px;
+		width: var(--border-move-length);
+		height: 1px;
+		box-shadow: inset 1px 1px 0 0px var(--border-move-color);
+	}
+}
+
+.unachieved {
+	box-shadow: inset 0 0 0 1px #979797;
+	color: black;
+	background-color: rgba(117, 117, 117, 0.77);
+	position: relative;
+}
+.unachieved::before {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	font-size: 90%;
+    content: "Not\00000aavailable";
+	white-space: pre;
+    display: none;
+    align-items: center;
+    justify-content: center;
+	color: darkred;
+    background-color: gray;
+	box-shadow: inset 0 0 0 1px #979797;
+}
+.unachieved:hover::before {
+	display: flex!important;
+}
+
+#C:hover::before {
+	
+}
+#Cpp:hover::before {
+	content: "Not\00000alearned";
+}
+#Objective-C:hover::before {
+	content: "Require\00000aC++";
+}
+#Swift:hover::before {
+	content: "Require\00000aObjective-C";
+}
+#C-Sharp:hover::before {
+	content: "Require\00000aC++";
+}
+#Java:hover::before {
+	content: "Require\00000aC++";
+}
+#Java-Swing:hover::before {
+	content: "Require\00000aJava";
+}
+#Python:hover::before {
+	content: "Not\00000alearned";
+}
+
+#HTML:hover::before {
+	
+}
+#CSS:hover::before {
+	
+}
+#LESS:hover::before {
+	content: "Not\00000alearned";
+}
+#SASS-SCSS:hover::before {
+	content: "Not\00000alearned";
+}
+#JS:hover::before {
+	
+}
+#jQuery:hover::before {
+	content: "Not\00000alearned";
+}
+#jQuery-Mobile:hover::before {
+	content: "Require\00000ajQuery";
+}
+#AJAX:hover::before {
+	content: "Not\00000alearned";
+}
+
+#PHP:hover::before {
+	content: "Not\00000alearned";
+}
+#ASP:hover::before {
+	content: "Require\00000aPHP";
+}
+#SQL:hover::before {
+	content: "Not\00000alearned";
+}
+#SQL-Server:hover::before {
+	content: "Require\00000aSQL";
+}
+#MySQL:hover::before {
+	content: "Require\00000aSQL";
+}
+
+#skill-level-rules {
+	padding: 35px 0;
+}
+
+.level-list > li {
+	padding: 3px 0;
+}
+.level-list > li > span {
+	min-width: 75px;
+	display: inline-block;
+}
+.level-list > li:nth-child(1) > span, .lvl1 {
+	color: #f44242;
+}
+.level-list > li:nth-child(2) > span, .lvl2 {
+	color: #f48c42;
+}
+.level-list > li:nth-child(3) > span, .lvl3 {
+	color: #f4d142;
+}
+.level-list > li:nth-child(4) > span, .lvl4 {
+	color: #48f442;
+}
+.level-list > li:nth-child(5) > span, .lvl5 {
+	color: #4268f4;
+}
+.level-list > li:nth-child(6) > span, .lvl6 {
+	color: #7742f4;
+}
+.level-list > li:nth-child(7) > span, .lvl7 {
+	color: #a742f4;
+}
+
+.achieved.lvl1::before {
+	--glass-color: rgba(244, 66, 66, 0.25);
+}
+.achieved.lvl2::before {
+	--glass-color: rgba(244, 140, 66, 0.25);
+}
+.achieved.lvl3::before {
+	--glass-color: rgba(244, 209, 66, 0.25);
+}
+.achieved.lvl4::before {
+	--glass-color: rgba(72, 244, 66, 0.25);
+}
+.achieved.lvl5::before {
+	--glass-color: rgba(66, 104, 244, 0.25);
+}
+.achieved.lvl6::before {
+	--glass-color: rgba(119, 66, 244, 0.25);
+}
+.achieved.lvl7::before {
+	--glass-color: rgba(167, 66, 244, 0.25);
+}
+
+#programming {
+	--max-lvl: "5";
+}
+#security {
+	--max-lvl: "7";
+}
+.achieved.lvl1:hover::before {
+	content: "Newbie\00000a1/" var(--max-lvl);
+}
+.achieved.lvl2:hover::before {
+	content: "Junior\00000a2/" var(--max-lvl);
+}
+.achieved.lvl3:hover::before {
+	content: "Senior\00000a3/" var(--max-lvl);
+}
+.achieved.lvl4:hover::before {
+	content: "Professor\00000a4/" var(--max-lvl);
+}
+.achieved.lvl5:hover::before {
+	content: "Master\00000a5/" var(--max-lvl);
+}
+.achieved.lvl6:hover::before {
+	content: "Beyond\00000a6/" var(--max-lvl);
+}
+.achieved.lvl7:hover::before {
+	content: "Legend\00000a7/" var(--max-lvl);
+}
+
+.achieved.lvl1::after {
+	--border-move-color: #f44242;
+}
+.achieved.lvl2::after {
+	--border-move-color: #f48c42;
+}
+.achieved.lvl3::after {
+	--border-move-color: #f4d142;
+}
+.achieved.lvl4::after {
+	--border-move-color: #48f442;
+}
+.achieved.lvl5::after {
+	--border-move-color: #4268f4;
+}
+.achieved.lvl6::after {
+	--border-move-color: #7742f4;
+}
+.achieved.lvl7::after {
+	--border-move-color: #a742f4;
+}
+
+#skill-level-rules > div {
+    width: calc(50% - 35px);
+	padding: 25px 0 0 35px;
+}
+#programming-rules {
+	
+}
+#security-rules {
+	box-shadow: inset 1px 0 0 0px orange;
+}

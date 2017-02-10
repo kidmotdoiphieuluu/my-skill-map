@@ -1,0 +1,140 @@
+/*
+ * CSS of flex-exam.html
+ */
+
+/* Variable definition */
+:root {
+	
+}
+
+body {
+	font-family: 'Tahoma', san-serif;
+}
+ul {
+	padding-left: 20px;
+}
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+	
+	background-color: darkviolet;
+	width: auto;
+	height: auto;
+}
+
+#parent-width-px-value, #parent-height-px-value {
+	width: 50px;
+	margin: 0 5px;
+}
+.list-attr li {
+	padding: 0.2em 0;
+}
+.list-attr li > span {
+	margin-right: 10px;
+	color: red;
+}
+
+input[type="checkbox"], input[type="radio"], label {
+	cursor: pointer;
+}
+label {
+	margin-right: 10px;
+}
+input[name="parent-align-content"] + span {
+	color: grey;
+}
+
+.flex-item {
+	background-color: lightblue;
+	box-shadow: inset 0 0 0 1px black;
+	width: auto;
+	height: auto;
+	font-size: 70%;
+	overflow: hidden;
+}
+
+.flex-item input, .flex-item select {
+	font-size: inherit;
+}
+.flex-item input[type="number"] {
+	width: 40px;
+}
+#child-width-px-value, #child-height-px-value {
+	width: 40px;
+	margin: 0 5px;
+}
+
+#item-1 {
+	width: auto;
+	height: auto;
+	
+	order: 1;
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: auto;
+	align-self: auto;
+}
+#item-2 {
+	width: auto;
+	height: auto;
+	
+	order: 2;
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: auto;
+	align-self: auto;
+}
+#item-3 {
+	width: auto;
+	height: auto;
+	
+	order: 3;
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: auto;
+	align-self: auto;
+}
+#item-4 {
+	width: auto;
+	height: auto;
+	
+	order: 4;
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: auto;
+	align-self: auto;
+}
+#item-5 {
+	width: auto;
+	height: auto;
+	
+	order: 5;
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: auto;
+	align-self: auto;
+}
+#item-6 {
+	width: auto;
+	height: auto;
+	
+	order: 6;
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: auto;
+	align-self: auto;
+}
+#item-7 {
+	width: auto;
+	height: auto;
+	
+	order: 7;
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: auto;
+	align-self: auto;
+}

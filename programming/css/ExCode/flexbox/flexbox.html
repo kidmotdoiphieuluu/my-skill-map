@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Flexbox</title>
+		
+		<!-- CSS -->
+		<link href="flexbox.css" type="text/css" rel="stylesheet" />
+		<link href="../../../../plugin/prism/prism.css" type="text/css" rel="stylesheet" />
+		
+		<!-- JS -->
+		<script src="../../../../plugin/iFrameResizer/iframeResizer.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<header>
+			<h1>ALL ABOUT FLEXBOX</h1>
+			<div id="table-content">
+				<h2>Table of content</h2>
+				
+				<p class="title"><a href="#flex-article">Flex Example (Try it yourself)</a></p>
+				<p class="title"><a href="#flex-container">Flex container (parent box)</a></p>
+				<ul>
+					<li><a href="#attr-display">display</a></li>
+					<li>
+						<span><a href="#attr-flex-flow">flex-flow</a></span>
+						<ul>
+							<li><a href="#attr-flex-direction">flex-direction</a></li>
+							<li><a href="#attr-flex-wrap">flex-wrap</a></li>
+						</ul>
+					</li>
+					<li><a href="#attr-justify-content">justify-content</a></li>
+					<li><a href="#attr-align-items">align-items</a></li>
+					<li><a href="#attr-align-content">align-content</a></li>
+				</ul>
+				
+				<p class="title"><a href="#flex-item">Flex item (child box)</a></p>
+				<ul>
+					<li><a href="#attr-order">order</a></li>
+					<li>
+						<span><a href="#attr-flex">flex</a></span>
+						<ul>
+							<li><a href="#attr-flex-grow">flex-grow</a></li>
+							<li><a href="#attr-flex-shrink">flex-shrink</a></li>
+							<li><a href="#attr-flex-basis">flex-basis</a></li>
+						</ul>
+					</li>
+					<li><a href="#attr-align-self">align-self</a></li>
+				</ul>
+			</div>
+		</header>
+		
+		<!-- Main Content -->
+		<article id="flex-article">
+			<iframe src="flex-exam.html" width="100%" ></iframe>
+			<section id="flex-container">
+				<h2>Flex container</h2>
+				
+				<div id="attr-display">
+					<h3 class="attr-name">display</h3><span class="attr-value">flex | inline-flex</span>;
+					<ul>
+						<li>
+							<span class="attr-value">flex | -webkit-box | -moz-box | -ms-flexbox | -webkit-flex</span>
+							<span>Lần lượt là cú pháp: chung | Chrome | Firefox | IE | Opera</span>
+						</li>
+						<li>
+							<span class="attr-value">inline-flex</span>
+							<span>Chưa rõ lắm sự khác nhau giữa flex và inline-flex</span>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="attr-flex-flow">
+					<h3 class="attr-name">flex-flow</h3><span class="attr-name">flex-direction</span> || <span class="attr-name">flex-wrap</span>;
+					<p>
+						Gồm hai thuộc tính nhỏ là <span class="attr-name">flex-direction</span> và <span class="attr-name">flex-wrap</span>.<br />
+						Mặc định là <span class="attr-value">row</span> <span class="attr-value">nowrap</span>
+					</p>
+					<div id="attr-flex-direction">
+						<h4 class="attr-name">flex-direction</h4><span class="attr-value">row | row-reverse | column | column-reverse</span>;
+						<ul>
+							<li>
+								<span class="attr-value">row</span>
+								<span>Xếp hàng ngang</span>
+							</li>
+							<li>
+								<span class="attr-value">row-reverse</span>
+								<span>Xếp hàng ngang. Thứ tự đảo ngược</span>
+							</li>
+							<li>
+								<span class="attr-value">column</span>
+								<span>Xếp hàng dọc</span>
+							</li>
+							<li>
+								<span class="attr-value">column-reverse</span>
+								<span>Xếp hàng dọc. Thứ tự đảo ngược</span>
+							</li>
+						</ul>
+					</div>
+					
+					<div id="attr-flex-wrap">
+						<h4 class="attr-name">flex-wrap</h4><span class="attr-value">nowrap | wrap | wrap-reverse</span>;
+						<ul>
+							<li>
+								<span class="attr-value">nowrap</span>
+								<span>Không xuống hàng. Các item tự co dãn để vừa độ rộng của parent</span>
+							</li>
+							<li>
+								<span class="attr-value">wrap</span>
+								<span>Xuống hàng khi cần</span>
+							</li>
+							<li>
+								<span class="attr-value">wrap-reverse</span>
+								<span>Xuống hàng khi cần. Thứ tự đảo ngược</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				<div id="attr-justify-content">
+					<h3 class="attr-name">justify-content</h3><span class="attr-value">flex-start | flex-end | center | space-between | space-around</span>;
+					<p>
+						Căn chỉnh item theo chiều ngang.<br />
+						Nếu item wrap xuống nhiều dòng thì dòng nào căn chỉnh theo dòng đó.
+					</p>
+					<ul>
+						<li>
+							<span class="attr-value">flex-start</span>
+							<span>Item dồn về đầu dòng (left)</span>
+						</li>
+						<li>
+							<span class="attr-value">flex-end</span>
+							<span>Item dồn về cuối dòng (right)</span>
+						</li>
+						<li>
+							<span class="attr-value">center</span>
+							<span>Căn giữa dòng</span>
+						</li>
+						<li>
+							<span class="attr-value">space-between</span>
+							<span>Khoảng trống còn dư của mỗi dòng chia đều ra 'ở giữa các item'</span>
+						</li>
+						<li>
+							<span class="attr-value">space-around</span>
+							<span>Khoảng trống còn dư của mỗi dòng chia đều ra 'hai bên (trái phải) của mỗi item'</span>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="attr-align-items">
+					<h3 class="attr-name">align-items</h3><span class="attr-value">flex-start | flex-end | center | baseline | stretch</span>;
+					<p>
+						Căn chỉnh item theo chiều dọc của mỗi dòng.<br />
+						Nếu item wrap xuống nhiều dòng thì dòng nào căn chỉnh theo dòng đó.<br />
+						<b><i><u>*Note:</u></i></b> Kết quả dễ thấy nhất khi các item trên cùng một dòng có độ cao khác nhau và một vài item có <span class="attr-name">height</span>: <span class="attr-value">auto</span>;
+					</p>
+					<ul>
+						<li>
+							<span class="attr-value">flex-start</span>
+							<span>Item dồn về đầu dòng (top)</span>
+						</li>
+						<li>
+							<span class="attr-value">flex-end</span>
+							<span>Item dồn về cuối dòng (bottom)</span>
+						</li>
+						<li>
+							<span class="attr-value">center</span>
+							<span>Căn giữa dòng</span>
+						</li>
+						<li>
+							<span class="attr-value">baseline</span>
+							<span>Căn item ngang nhau dựa trên dòng chữ đầu tiên trong mỗi item</span>
+						</li>
+						<li>
+							<span class="attr-value">stretch</span>
+							<span>Các item có độ cao <span class="attr-value">auto</span> sẽ dãn chiều dọc ra vừa với dòng chứa nó</span>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="attr-align-content">
+					<h3 class="attr-name">align-content</h3><span class="attr-value">flex-start | flex-end | center | space-between | space-around | stretch</span>;
+					<p>
+						Căn chỉnh các dòng theo chiều dọc của parent.<br />
+						Chỉ có hiệu ứng khi item wrap xuống nhiều dòng.<br />
+						<b><i><u>*Note:</u></i></b> Kết quả dễ thấy nhất khi các item trên cùng một dòng có độ cao khác nhau và một vài item có <span class="attr-name">height</span>: <span class="attr-value">auto</span>;
+					</p>
+					<ul>
+						<li>
+							<span class="attr-value">flex-start</span>
+							<span>Các dòng dồn về đầu parent (top)</span>
+						</li>
+						<li>
+							<span class="attr-value">flex-end</span>
+							<span>Các dòng dồn về cuối parent (bottom)</span>
+						</li>
+						<li>
+							<span class="attr-value">center</span>
+							<span>Các dòng dồn về giữa</span>
+						</li>
+						<li>
+							<span class="attr-value">space-between</span>
+							<span>Khoảng trống còn dư của parent được chia đều ra 'ở giữa các dòng' (không làm cho mỗi dòng cao thêm)</span>
+						</li>
+						<li>
+							<span class="attr-value">space-around</span>
+							<span>Khoảng trống còn dư của parent được chia đều ra 'trên dưới của mỗi dòng' (không làm cho mỗi dòng cao thêm)</span>
+						</li>
+						<li>
+							<span class="attr-value">stretch</span>
+							<span>Khoảng trống còn dư của parent được chia đều ra 'cho mỗi dòng' (làm cho mỗi dòng cao thêm)</span>
+						</li>
+					</ul>
+				</div>
+			</section>
+			
+			<section id="flex-item">
+				<h2>Flex item</h2>
+				<div id="attr-order">
+					<h3 class="attr-name">order</h3><span class="attr-value">integer</span>;
+					<p>
+						Điều chỉnh thứ tự sắp xếp của item này trong chuỗi các item.<br />
+						Mặc định xếp theo thứ tự HTML element.
+					</p>
+				</div>
+				<div id="attr-flex">
+					<h3 class="attr-name">flex</h3><span class="attr-name">flex-grow</span> || <span class="attr-name">flex-shrink</span> || <span class="attr-name">flex-basis</span>;
+					<p>
+						Gồm 3 thuộc tính nhỏ là <span class="attr-name">flex-grow</span>, <span class="attr-name">flex-shrink</span> và <span class="attr-name">flex-basis</span>.<br />
+						Mặc định là <span class="attr-value">0 1 auto</span>.
+					</p>
+					<div id="attr-flex-grow">
+						<h4 class="attr-name">flex-grow</h4><span class="attr-value">unsigned int</span>;
+						<p>
+							Mặc định là <span class="attr-value">0</span>.<br />
+							Tổng các <span class="attr-name">flex-grow</span> của các item là tổng số phần bằng nhau.<br />
+							Khoảng trống (ngang) của parent chia cho tổng số phần, mỗi item lấy số phần tương ứng của mình.<br />
+							Chiều ngang của mỗi item sẽ nới rộng ra.<br />
+							<b><u><i>*Note:</i></u></b> Không có tác dụng khi <span class="attr-name">flex-wrap</span>: <span class="attr-value">nowrap</span>;
+						</p>
+					</div>
+					<div id="attr-flex-shrink">
+						<h4 class="attr-name">flex-shrink</h4><span class="attr-value">unsigned int</span>;
+						<p>
+							<b><u><i>*Note:</i></u></b> Chỉ có tác dụng khi <span class="attr-name">flex-wrap</span>: <span class="attr-value">nowrap</span>;<br />
+							Ngược lại với <span class="attr-name">flex-grow</span><br />
+							Tổng các <span class="attr-name">flex-shrink</span> của các item là tổng số phần bằng nhau.<br />
+							Khoảng bị thiếu (ngang) của parent chia cho tổng số phần, mỗi item co lại một khoảng bằng với số phần tương ứng của mình.<br />
+							Chiều ngang của mỗi item sẽ co lại.<br />
+						</p>
+					</div>
+					<div id="attr-flex-basis">
+						<h4 class="attr-name">flex-basis</h4><span class="attr-value">&lt;length&gt; | auto</span>;
+						<p>
+							Chỉ định chiều ngang khởi điểm cho item.<br />
+							Item vẫn sẽ chịu ảnh hưởng của <span class="attr-name">flex-grow</span> và <span class="attr-name">flex-shrink</span> sau khi được cấp chiều ngang khởi điểm.<br />
+						</p>
+					</div>
+				</div>
+				<div id="attr-align-self">
+					<h3 class="attr-name">align-self</h3><span class="attr-value">auto | flex-start | flex-end | center | baseline | stretch</span>;
+					<p>
+						Xem <a href="#attr-align-items"><span class="attr-name">align-items</span></a> bên mục parent để hiểu các thuộc tính.<br />
+						Thuộc tính này của item sẽ căn chỉnh cho riêng mình nó, trong khi các item khác sẽ căn chỉnh theo <span class="attr-name">align-items</span> của parent.
+					</p>
+				</div>
+			</section>
+		</article>
+		
+		<script src="../../../../plugin/prism/prism.js" type="text/javascript"></script>
+		<script type="text/javascript">iFrameResize();</script>
+	</body>
+</html>

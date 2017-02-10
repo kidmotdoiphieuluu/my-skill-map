@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Flex Exam</title>
+		<link href="flex-exam.css" type="text/css" rel="stylesheet" />
+		<script src="../../../../plugin/iFrameResizer/iframeResizer.contentWindow.js" type="text/javascript"></script>
+		<script src="../../../../js/jquery-3.1.1.js" type="text/javascript"></script>
+		<script src="flex-exam.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<fieldset>
+			<legend><b>Flex container (parent)</b></legend>
+			
+			<p>
+				<span style="color: red;">Width:</span>
+				<label for="parent-width-auto">
+					<input id="parent-width-auto" type="radio" name="parent-width" value="auto" checked="checked" />
+					<span>auto</span>
+				</label>
+				<label for="parent-width-px">
+					<input id="parent-width-px" type="radio" name="parent-width" value="px" />
+					<input id="parent-width-px-value" type="number" value="700" disabled="disabled" /><span style="color: grey;">px</span>
+				</label>
+				
+				<span style="color: red;">Height:</span>
+				<label for="parent-height-auto">
+					<input id="parent-height-auto" type="radio" name="parent-height" value="auto" checked="checked" />
+					<span>auto</span>
+				</label>
+				<label for="parent-height-px">
+					<input id="parent-height-px" type="radio" name="parent-height" value="px" />
+					<input id="parent-height-px-value" type="number" value="900" disabled="disabled" /><span style="color: grey;">px</span>
+				</label>
+				
+				<span style="font-weight: bold;">Flex item (child) option:</span>
+				<label for="child-option-show">
+					<input id="child-option-show" type="checkbox" checked="checked" />
+					<span>Show</span>
+				</label>
+			</p>
+			
+			<ul class="list-attr">
+				<li>
+					<span>display</span>
+					<label for="parent-display">
+						<input id="parent-display" type="checkbox" checked="checked" />
+						<span>flex | -webkit-box | -moz-box | -ms-flexbox | -webkit-flex</span>
+					</label>
+					<label for="parent-display-inline">
+						<input id="parent-display-inline" type="checkbox" />
+						<span>inline</span>
+					</label>
+				</li>
+				<li>
+					<span>flex-flow</span>
+					<ul>
+						<li>
+							<span>flex-direction</span>
+							
+							<label for="parent-direction-row">
+								<input id="parent-direction-row" type="radio" name="parent-direction" value="row" checked="checked" />
+								<span>row (df)</span>
+							</label>
+							
+							<label for="parent-direction-row-reverse">
+								<input id="parent-direction-row-reverse" type="radio" name="parent-direction" value="row-reverse" />
+								<span>row-reverse</span>
+							</label>
+							
+							<label for="parent-direction-column">
+								<input id="parent-direction-column" type="radio" name="parent-direction" value="column" />
+								<span>column</span>
+							</label>
+							
+							<label for="parent-direction-column-reverse">
+								<input id="parent-direction-column-reverse" type="radio" name="parent-direction" value="column-reverse" />
+								<span>column-reverse</span>
+							</label>
+						</li>
+						<li>
+							<span>flex-wrap</span>
+							
+							<label for="parent-wrap-nowrap">
+								<input id="parent-wrap-nowrap" type="radio" name="parent-wrap" value="nowrap" />
+								<span>nowrap (df)</span>
+							</label>
+							
+							<label for="parent-wrap-wrap">
+								<input id="parent-wrap-wrap" type="radio" name="parent-wrap" value="wrap" checked="checked" />
+								<span>wrap</span>
+							</label>
+							
+							<label for="parent-wrap-wrap-reverse">
+								<input id="parent-wrap-wrap-reverse" type="radio" name="parent-wrap" value="wrap-reverse" />
+								<span>wrap-reverse</span>
+							</label>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<span>justify-content</span>
+					
+					<label for="parent-justify-content-flex-start">
+						<input id="parent-justify-content-flex-start" type="radio" name="parent-justify-content" value="flex-start" checked="checked" />
+						<span>flex-start (df)</span>
+					</label>
+					
+					<label for="parent-justify-content-flex-end">
+						<input id="parent-justify-content-flex-end" type="radio" name="parent-justify-content" value="flex-end" />
+						<span>flex-end</span>
+					</label>
+					
+					<label for="parent-justify-content-center">
+						<input id="parent-justify-content-center" type="radio" name="parent-justify-content" value="center" />
+						<span>center</span>
+					</label>
+					
+					<label for="parent-justify-content-space-between">
+						<input id="parent-justify-content-space-between" type="radio" name="parent-justify-content" value="space-between" />
+						<span>space-between</span>
+					</label>
+					
+					<label for="parent-justify-content-space-around">
+						<input id="parent-justify-content-space-around" type="radio" name="parent-justify-content" value="space-around" />
+						<span>space-around</span>
+					</label>
+					
+				</li>
+				<li>
+					<span>align-items</span>
+					
+					<label for="parent-align-items-flex-start">
+						<input id="parent-align-items-flex-start" type="radio" name="parent-align-items" value="flex-start" />
+						<span>flex-start</span>
+					</label>
+					
+					<label for="parent-align-items-flex-end">
+						<input id="parent-align-items-flex-end" type="radio" name="parent-align-items" value="flex-end" />
+						<span>flex-end</span>
+					</label>
+					
+					<label for="parent-align-items-center">
+						<input id="parent-align-items-center" type="radio" name="parent-align-items" value="center" />
+						<span>center</span>
+					</label>
+					
+					<label for="parent-align-items-baseline">
+						<input id="parent-align-items-baseline" type="radio" name="parent-align-items" value="baseline" />
+						<span>baseline</span>
+					</label>
+					
+					<label for="parent-align-items-stretch">
+						<input id="parent-align-items-stretch" type="radio" name="parent-align-items" value="stretch" checked="checked" />
+						<span>stretch (df)</span>
+					</label>
+					
+				</li>
+				<li>
+					<span>align-content</span>
+					
+					<label for="parent-align-content-flex-start">
+						<input id="parent-align-content-flex-start" type="radio" name="parent-align-content" value="flex-start" disabled="disabled" />
+						<span>flex-start</span>
+					</label>
+					
+					<label for="parent-align-content-flex-end">
+						<input id="parent-align-content-flex-end" type="radio" name="parent-align-content" value="flex-end" disabled="disabled" />
+						<span>flex-end</span>
+					</label>
+					
+					<label for="parent-align-content-center">
+						<input id="parent-align-content-center" type="radio" name="parent-align-content" value="center" disabled="disabled" />
+						<span>center</span>
+					</label>
+					
+					<label for="parent-align-content-space-between">
+						<input id="parent-align-content-space-between" type="radio" name="parent-align-content" value="space-between" disabled="disabled" />
+						<span>space-between</span>
+					</label>
+					
+					<label for="parent-align-content-space-around">
+						<input id="parent-align-content-space-around" type="radio" name="parent-align-content" value="space-around" disabled="disabled" />
+						<span>space-around</span>
+					</label>
+					
+					<label for="parent-align-content-stretch">
+						<input id="parent-align-content-stretch" type="radio" name="parent-align-content" value="stretch" checked="checked" disabled="disabled" />
+						<span>stretch (df)</span>
+					</label>
+					
+				</li>
+			</ul>
+			
+			<div id="parent" class="flex-container" >
+				
+				<div id="item-1" class="flex-item">
+					<span>Div 1 (flex item)</span>
+					
+					<div>
+						<span>W:</span>
+						<label for="item-1-width-auto">
+							<input id="item-1-width-auto" type="radio" name="item-1-width" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-1-width-px">
+							<input id="item-1-width-px" type="radio" name="item-1-width" value="px" />
+							<input id="item-1-width-px-value" type="number" value="100" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					<div>
+						<span>H:</span>
+						<label for="item-1-height-auto">
+							<input id="item-1-height-auto" type="radio" name="item-1-height" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-1-height-px">
+							<input id="item-1-height-px" type="radio" name="item-1-height" value="px" />
+							<input id="item-1-height-px-value" type="number" value="200" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					
+					<ul class="list-attr">
+						<li>
+							<span>order</span>
+							<input id="item-1-order" type="number" value="1" />
+						</li>
+						<li>
+							<span>flex</span>
+							<ul>
+								<li>
+									<span>flex-grow</span>
+									<input id="item-1-grow" type="number" value="0" />
+								</li>
+								<li>
+									<span>flex-shrink</span>
+									<input id="item-1-shrink" type="number" value="1" />
+								</li>
+								<li>
+									<span>flex-basis</span>
+									<label for="item-1-basis-auto">
+										<input id="item-1-basis-auto" type="radio" name="item-1-basis" value="auto" checked="checked" />
+										<span>at</span>
+									</label>
+									<label for="item-1-basis-int">
+										<input id="item-1-basis-int" type="radio" name="item-1-basis" value="int" />
+										<input id="item-1-basis-int-value" type="number" value="100" disabled="disabled" />
+										<select id="item-1-basis-int-unit" name="item-1-basis-int-unit" disabled="disabled" >
+											<option value="%">%</option>
+											<option value="em">em</option>
+											<option value="px" selected="selected">px</option>
+										</select>
+									</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<span>align-self</span>
+							<select id="item-1-align-self" name="item-1-align-self">
+								<option value="auto">auto (df)</option>
+								<option value="flex-start">flex-start</option>
+								<option value="flex-end">flex-end</option>
+								<option value="center">center</option>
+								<option value="baseline">baseline</option>
+								<option value="stretch">stretch</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="item-2" class="flex-item">
+					<span>Div 2 (flex item)</span>
+					
+					<div>
+						<span>W:</span>
+						<label for="item-2-width-auto">
+							<input id="item-2-width-auto" type="radio" name="item-2-width" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-2-width-px">
+							<input id="item-2-width-px" type="radio" name="item-2-width" value="px" />
+							<input id="item-2-width-px-value" type="number" value="100" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					<div>
+						<span>H:</span>
+						<label for="item-2-height-auto">
+							<input id="item-2-height-auto" type="radio" name="item-2-height" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-2-height-px">
+							<input id="item-2-height-px" type="radio" name="item-2-height" value="px" />
+							<input id="item-2-height-px-value" type="number" value="200" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					
+					<ul class="list-attr">
+						<li>
+							<span>order</span>
+							<input id="item-2-order" type="number" value="2" />
+						</li>
+						<li>
+							<span>flex</span>
+							<ul>
+								<li>
+									<span>flex-grow</span>
+									<input id="item-2-grow" type="number" value="0" />
+								</li>
+								<li>
+									<span>flex-shrink</span>
+									<input id="item-2-shrink" type="number" value="1" />
+								</li>
+								<li>
+									<span>flex-basis</span>
+									<label for="item-2-basis-auto">
+										<input id="item-2-basis-auto" type="radio" name="item-2-basis" value="auto" checked="checked" />
+										<span>at</span>
+									</label>
+									<label for="item-2-basis-int">
+										<input id="item-2-basis-int" type="radio" name="item-2-basis" value="int" />
+										<input id="item-2-basis-int-value" type="number" value="100" disabled="disabled" />
+										<select id="item-2-basis-int-unit" name="item-2-basis-int-unit" disabled="disabled" >
+											<option value="%">%</option>
+											<option value="em">em</option>
+											<option value="px" selected="selected">px</option>
+										</select>
+									</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<span>align-self</span>
+							<select id="item-2-align-self" name="item-2-align-self">
+								<option value="auto">auto (df)</option>
+								<option value="flex-start">flex-start</option>
+								<option value="flex-end">flex-end</option>
+								<option value="center">center</option>
+								<option value="baseline">baseline</option>
+								<option value="stretch">stretch</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="item-3" class="flex-item">
+					<span>Div 3 (flex item)</span>
+					
+					<div>
+						<span>W:</span>
+						<label for="item-3-width-auto">
+							<input id="item-3-width-auto" type="radio" name="item-3-width" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-3-width-px">
+							<input id="item-3-width-px" type="radio" name="item-3-width" value="px" />
+							<input id="item-3-width-px-value" type="number" value="100" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					<div>
+						<span>H:</span>
+						<label for="item-3-height-auto">
+							<input id="item-3-height-auto" type="radio" name="item-3-height" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-3-height-px">
+							<input id="item-3-height-px" type="radio" name="item-3-height" value="px" />
+							<input id="item-3-height-px-value" type="number" value="200" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					
+					<ul class="list-attr">
+						<li>
+							<span>order</span>
+							<input id="item-3-order" type="number" value="3" />
+						</li>
+						<li>
+							<span>flex</span>
+							<ul>
+								<li>
+									<span>flex-grow</span>
+									<input id="item-3-grow" type="number" value="0" />
+								</li>
+								<li>
+									<span>flex-shrink</span>
+									<input id="item-3-shrink" type="number" value="1" />
+								</li>
+								<li>
+									<span>flex-basis</span>
+									<label for="item-3-basis-auto">
+										<input id="item-3-basis-auto" type="radio" name="item-3-basis" value="auto" checked="checked" />
+										<span>at</span>
+									</label>
+									<label for="item-3-basis-int">
+										<input id="item-3-basis-int" type="radio" name="item-3-basis" value="int" />
+										<input id="item-3-basis-int-value" type="number" value="100" disabled="disabled" />
+										<select id="item-3-basis-int-unit" name="item-3-basis-int-unit" disabled="disabled" >
+											<option value="%">%</option>
+											<option value="em">em</option>
+											<option value="px" selected="selected">px</option>
+										</select>
+									</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<span>align-self</span>
+							<select id="item-3-align-self" name="item-3-align-self">
+								<option value="auto">auto (df)</option>
+								<option value="flex-start">flex-start</option>
+								<option value="flex-end">flex-end</option>
+								<option value="center">center</option>
+								<option value="baseline">baseline</option>
+								<option value="stretch">stretch</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="item-4" class="flex-item">
+					<span>Div 4 (flex item)</span>
+					
+					<div>
+						<span>W:</span>
+						<label for="item-4-width-auto">
+							<input id="item-4-width-auto" type="radio" name="item-4-width" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-4-width-px">
+							<input id="item-4-width-px" type="radio" name="item-4-width" value="px" />
+							<input id="item-4-width-px-value" type="number" value="100" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					<div>
+						<span>H:</span>
+						<label for="item-4-height-auto">
+							<input id="item-4-height-auto" type="radio" name="item-4-height" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-4-height-px">
+							<input id="item-4-height-px" type="radio" name="item-4-height" value="px" />
+							<input id="item-4-height-px-value" type="number" value="200" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					
+					<ul class="list-attr">
+						<li>
+							<span>order</span>
+							<input id="item-4-order" type="number" value="4" />
+						</li>
+						<li>
+							<span>flex</span>
+							<ul>
+								<li>
+									<span>flex-grow</span>
+									<input id="item-4-grow" type="number" value="0" />
+								</li>
+								<li>
+									<span>flex-shrink</span>
+									<input id="item-4-shrink" type="number" value="1" />
+								</li>
+								<li>
+									<span>flex-basis</span>
+									<label for="item-4-basis-auto">
+										<input id="item-4-basis-auto" type="radio" name="item-4-basis" value="auto" checked="checked" />
+										<span>at</span>
+									</label>
+									<label for="item-4-basis-int">
+										<input id="item-4-basis-int" type="radio" name="item-4-basis" value="int" />
+										<input id="item-4-basis-int-value" type="number" value="100" disabled="disabled" />
+										<select id="item-4-basis-int-unit" name="item-4-basis-int-unit" disabled="disabled" >
+											<option value="%">%</option>
+											<option value="em">em</option>
+											<option value="px" selected="selected">px</option>
+										</select>
+									</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<span>align-self</span>
+							<select id="item-4-align-self" name="item-4-align-self">
+								<option value="auto">auto (df)</option>
+								<option value="flex-start">flex-start</option>
+								<option value="flex-end">flex-end</option>
+								<option value="center">center</option>
+								<option value="baseline">baseline</option>
+								<option value="stretch">stretch</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="item-5" class="flex-item">
+					<span>Div 5 (flex item)</span>
+					
+					<div>
+						<span>W:</span>
+						<label for="item-5-width-auto">
+							<input id="item-5-width-auto" type="radio" name="item-5-width" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-5-width-px">
+							<input id="item-5-width-px" type="radio" name="item-5-width" value="px" />
+							<input id="item-5-width-px-value" type="number" value="100" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					<div>
+						<span>H:</span>
+						<label for="item-5-height-auto">
+							<input id="item-5-height-auto" type="radio" name="item-5-height" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-5-height-px">
+							<input id="item-5-height-px" type="radio" name="item-5-height" value="px" />
+							<input id="item-5-height-px-value" type="number" value="200" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					
+					<ul class="list-attr">
+						<li>
+							<span>order</span>
+							<input id="item-5-order" type="number" value="5" />
+						</li>
+						<li>
+							<span>flex</span>
+							<ul>
+								<li>
+									<span>flex-grow</span>
+									<input id="item-5-grow" type="number" value="0" />
+								</li>
+								<li>
+									<span>flex-shrink</span>
+									<input id="item-5-shrink" type="number" value="1" />
+								</li>
+								<li>
+									<span>flex-basis</span>
+									<label for="item-5-basis-auto">
+										<input id="item-5-basis-auto" type="radio" name="item-5-basis" value="auto" checked="checked" />
+										<span>at</span>
+									</label>
+									<label for="item-5-basis-int">
+										<input id="item-5-basis-int" type="radio" name="item-5-basis" value="int" />
+										<input id="item-5-basis-int-value" type="number" value="100" disabled="disabled" />
+										<select id="item-5-basis-int-unit" name="item-5-basis-int-unit" disabled="disabled" >
+											<option value="%">%</option>
+											<option value="em">em</option>
+											<option value="px" selected="selected">px</option>
+										</select>
+									</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<span>align-self</span>
+							<select id="item-5-align-self" name="item-5-align-self">
+								<option value="auto">auto (df)</option>
+								<option value="flex-start">flex-start</option>
+								<option value="flex-end">flex-end</option>
+								<option value="center">center</option>
+								<option value="baseline">baseline</option>
+								<option value="stretch">stretch</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="item-6" class="flex-item">
+					<span>Div 6 (flex item)</span>
+					
+					<div>
+						<span>W:</span>
+						<label for="item-6-width-auto">
+							<input id="item-6-width-auto" type="radio" name="item-6-width" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-6-width-px">
+							<input id="item-6-width-px" type="radio" name="item-6-width" value="px" />
+							<input id="item-6-width-px-value" type="number" value="100" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					<div>
+						<span>H:</span>
+						<label for="item-6-height-auto">
+							<input id="item-6-height-auto" type="radio" name="item-6-height" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-6-height-px">
+							<input id="item-6-height-px" type="radio" name="item-6-height" value="px" />
+							<input id="item-6-height-px-value" type="number" value="200" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					
+					<ul class="list-attr">
+						<li>
+							<span>order</span>
+							<input id="item-6-order" type="number" value="6" />
+						</li>
+						<li>
+							<span>flex</span>
+							<ul>
+								<li>
+									<span>flex-grow</span>
+									<input id="item-6-grow" type="number" value="0" />
+								</li>
+								<li>
+									<span>flex-shrink</span>
+									<input id="item-6-shrink" type="number" value="1" />
+								</li>
+								<li>
+									<span>flex-basis</span>
+									<label for="item-6-basis-auto">
+										<input id="item-6-basis-auto" type="radio" name="item-6-basis" value="auto" checked="checked" />
+										<span>at</span>
+									</label>
+									<label for="item-6-basis-int">
+										<input id="item-6-basis-int" type="radio" name="item-6-basis" value="int" />
+										<input id="item-6-basis-int-value" type="number" value="100" disabled="disabled" />
+										<select id="item-6-basis-int-unit" name="item-6-basis-int-unit" disabled="disabled">
+											<option value="%">%</option>
+											<option value="em">em</option>
+											<option value="px" selected="selected">px</option>
+										</select>
+									</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<span>align-self</span>
+							<select id="item-6-align-self" name="item-6-align-self">
+								<option value="auto">auto (df)</option>
+								<option value="flex-start">flex-start</option>
+								<option value="flex-end">flex-end</option>
+								<option value="center">center</option>
+								<option value="baseline">baseline</option>
+								<option value="stretch">stretch</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="item-7" class="flex-item">
+					<span>Div 7 (flex item)</span>
+					
+					<div>
+						<span>W:</span>
+						<label for="item-7-width-auto">
+							<input id="item-7-width-auto" type="radio" name="item-7-width" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-7-width-px">
+							<input id="item-7-width-px" type="radio" name="item-7-width" value="px" />
+							<input id="item-7-width-px-value" type="number" value="100" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					<div>
+						<span>H:</span>
+						<label for="item-7-height-auto">
+							<input id="item-7-height-auto" type="radio" name="item-7-height" value="auto" checked="checked" />
+							<span>at</span>
+						</label>
+						<label for="item-7-height-px">
+							<input id="item-7-height-px" type="radio" name="item-7-height" value="px" />
+							<input id="item-7-height-px-value" type="number" value="200" disabled="disabled" /><span style="color: grey;">px</span>
+						</label>
+					</div>
+					
+					<ul class="list-attr">
+						<li>
+							<span>order</span>
+							<input id="item-7-order" type="number" value="7" />
+						</li>
+						<li>
+							<span>flex</span>
+							<ul>
+								<li>
+									<span>flex-grow</span>
+									<input id="item-7-grow" type="number" value="0" />
+								</li>
+								<li>
+									<span>flex-shrink</span>
+									<input id="item-7-shrink" type="number" value="1" />
+								</li>
+								<li>
+									<span>flex-basis</span>
+									<label for="item-7-basis-auto">
+										<input id="item-7-basis-auto" type="radio" name="item-7-basis" value="auto" checked="checked" />
+										<span>at</span>
+									</label>
+									<label for="item-7-basis-int">
+										<input id="item-7-basis-int" type="radio" name="item-7-basis" value="int" />
+										<input id="item-7-basis-int-value" type="number" value="100" disabled="disabled" />
+										<select id="item-7-basis-int-unit" name="item-7-basis-int-unit" disabled="disabled">
+											<option value="%">%</option>
+											<option value="em">em</option>
+											<option value="px" selected="selected">px</option>
+										</select>
+									</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<span>align-self</span>
+							<select id="item-7-align-self" name="item-7-align-self">
+								<option value="auto">auto (df)</option>
+								<option value="flex-start">flex-start</option>
+								<option value="flex-end">flex-end</option>
+								<option value="center">center</option>
+								<option value="baseline">baseline</option>
+								<option value="stretch">stretch</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+		</fieldset>
+		
+	</body>
+</html>
